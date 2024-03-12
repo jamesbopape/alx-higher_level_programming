@@ -1,13 +1,10 @@
 #!/usr/bin/node
-exports.esrever = function (list) {
-  let len = list.length - 1;
+if (process.argv[2] === undefined || isNaN(process.argv[2])) {
+  console.log('Missing size');
+} else {
+  const x = Number(process.argv[2]);
   let i = 0;
-  while ((len - i) > 0) {
-    const aux = list[len];
-    list[len] = list[i];
-    list[i] = aux;
+  while (i < x) {
+    console.log('X'.repeat(x));
     i++;
-    len--;
   }
-  return list;
-}
